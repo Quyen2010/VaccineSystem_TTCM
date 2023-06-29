@@ -1,0 +1,27 @@
+﻿@model IEnumerable<VaccineSystem.Models.Category>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<nav id="navigation">
+	<!-- container -->
+	<div class="container">
+		<!-- responsive-nav -->
+		<div id="responsive-nav">
+			<!-- NAV -->
+			<ul class="main-nav nav navbar-nav">
+				<li class="active"><a href="/Home">Home</a></li>
+				<li class="dropdown">
+					<a class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Categories
+					</a>
+					@foreach (var item in Model)
+					{
+						<a class="dropdown-item" href="/Products/ProductByCategory?catId=@item.CategoryId">@item.CategoryName</a>
+					}
+			</ul>
+			<!-- /NAV -->
+		</div>
+		<!-- /responsive-nav -->
+	</div>
+	<!-- /container -->
+</nav>
